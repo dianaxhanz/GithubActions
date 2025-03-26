@@ -115,7 +115,7 @@ public class Divide
 }
 
  // Power Unit Test
-public class Power
+public class Divide
 {
 	[TestMethod]
 	public void Add_Valid_Patino()

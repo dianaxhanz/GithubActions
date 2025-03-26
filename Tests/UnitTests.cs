@@ -113,3 +113,31 @@ public class Divide
 		Assert.ThrowsException<ArgumentNullException>(() => Program.Divide(null, null));
 	}
 }
+
+ // Power Unit Test
+public class Power
+{
+	[TestMethod]
+	public void Add_Valid_Patino()
+	{
+		Assert.AreEqual(3, Program.Power("1", "2"));
+		Assert.AreEqual(5, Program.Power("3", "2"));
+		Assert.AreEqual(12, Program.Power("5", "7"));
+	}
+
+	[TestMethod]
+	public void Add_Invalid_Patino()
+	{
+		Assert.ThrowsException<FormatException>(() => Program.Power("1", "a"));
+		Assert.ThrowsException<FormatException>(() => Program.Power("a", "1"));
+		Assert.ThrowsException<FormatException>(() => Program.Power("a", "a"));
+	}
+
+	[TestMethod]
+	public void Add_Null_Patino()
+	{
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Power("1", null));
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Power(null, "1"));
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Power(null, null));
+	}
+}

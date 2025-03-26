@@ -1,6 +1,8 @@
 namespace GithubActionsLab;
 
 [TestClass]
+
+// Addition Unit Test
 public class Addition
 {
 	[TestMethod]
@@ -25,5 +27,33 @@ public class Addition
 		Assert.ThrowsException<ArgumentNullException>(() => Program.Add("1", null));
 		Assert.ThrowsException<ArgumentNullException>(() => Program.Add(null, "1"));
 		Assert.ThrowsException<ArgumentNullException>(() => Program.Add(null, null));
+	}
+}
+
+ // Subtraction Unit Test
+public class Subtract
+{
+	[TestMethod]
+	public void Add_Valid_Patino()
+	{
+		Assert.AreEqual(3, Program.Subtract("1", "2"));
+		Assert.AreEqual(5, Program.Subtract("3", "2"));
+		Assert.AreEqual(12, Program.Subtract("5", "7"));
+	}
+
+	[TestMethod]
+	public void Add_Invalid_Patino()
+	{
+		Assert.ThrowsException<FormatException>(() => Program.Subtract("1", "a"));
+		Assert.ThrowsException<FormatException>(() => Program.Subtract("a", "1"));
+		Assert.ThrowsException<FormatException>(() => Program.Subtract("a", "a"));
+	}
+
+	[TestMethod]
+	public void Add_Null_Patino()
+	{
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Subtract("1", null));
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Subtract(null, "1"));
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Subtract(null, null));
 	}
 }
